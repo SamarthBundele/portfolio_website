@@ -420,6 +420,185 @@ body::before {
 /* Hero Code Section */
 .hero-code {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Profile Section */
+.profile-section {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.profile-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid #30363d;
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.profile-card:hover {
+    border-color: #58a6ff;
+    box-shadow: 0 8px 32px rgba(88, 166, 255, 0.2);
+}
+
+.profile-image {
+    margin-bottom: 1rem;
+}
+
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #58a6ff;
+    transition: all 0.3s ease;
+}
+
+.profile-img:hover {
+    transform: scale(1.05);
+    border-color: #7ee787;
+}
+
+.profile-info h3 {
+    color: #fff;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.profile-info p {
+    color: #8b949e;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* Profile Social Links */
+.profile-social-links {
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-top: 1rem;
+}
+
+.social-btn {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.social-btn.linkedin {
+    background: #0077b5;
+    color: #fff;
+}
+
+.social-btn.github {
+    background: #333;
+    color: #fff;
+}
+
+.social-btn.leetcode {
+    background: #ffa116;
+    color: #fff;
+}
+
+.social-btn.instagram {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    color: #fff;
+}
+
+.social-btn:hover {
+    transform: translateY(-2px) scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Social Media Section */
+.social-media-section {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.social-media-section h4 {
+    color: #8b949e;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    font-family: 'Courier New', monospace;
+}
+
+.social-links-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #e6edf3;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.social-link:hover {
+    transform: translateY(-2px);
+    border-color: #58a6ff;
+    background: rgba(88, 166, 255, 0.1);
+}
+
+.social-link.linkedin:hover {
+    border-color: #0077b5;
+    background: rgba(0, 119, 181, 0.1);
+}
+
+.social-link.leetcode:hover {
+    border-color: #ffa116;
+    background: rgba(255, 161, 22, 0.1);
+}
+
+.social-link.instagram:hover {
+    border-color: #e6683c;
+    background: rgba(230, 104, 60, 0.1);
+}
+
+.social-link.twitter:hover {
+    border-color: #1da1f2;
+    background: rgba(29, 161, 242, 0.1);
+}
+
+.social-link.medium:hover {
+    border-color: #00ab6c;
+    background: rgba(0, 171, 108, 0.1);
+}
+
+.social-link.email:hover {
+    border-color: #ea4335;
+    background: rgba(234, 67, 53, 0.1);
+}
+
+.social-link i {
+    font-size: 1.1rem;
+}
+
+.social-link span {
+    font-family: 'Courier New', monospace;
 }
 
 .code-editor {
@@ -863,6 +1042,21 @@ section {
         flex-wrap: wrap;
     }
     
+    .social-links-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
+    }
+    
+    .profile-social-links {
+        gap: 0.6rem;
+    }
+    
+    .social-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 0.8rem;
+    }
+    
     .about-stats {
         grid-template-columns: 1fr;
     }
@@ -882,15 +1076,17 @@ section {
         grid-template-columns: 1fr;
     }
     
-    .profile-card {
-        width: 250px;
-        height: 250px;
+    .hero-code {
+        flex-direction: column;
     }
     
     .profile-img {
-        width: 150px;
-        height: 150px;
-        font-size: 3rem;
+        width: 120px;
+        height: 120px;
+    }
+    
+    .profile-card {
+        padding: 1.5rem;
     }
 }
 
@@ -905,6 +1101,20 @@ section {
     
     .container {
         padding: 0 15px;
+    }
+    
+    .social-links-grid {
+        grid-template-columns: 1fr;
+        gap: 0.6rem;
+    }
+    
+    .social-media-section h4 {
+        font-size: 0.9rem;
+    }
+    
+    .social-link {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.8rem;
     }
 }/* Sk
 ills Section */
