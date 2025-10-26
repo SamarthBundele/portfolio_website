@@ -128,10 +128,10 @@ function typeCommand(element, commands, speed = 100) {
 function animateRoleText() {
     const roles = [
         'Full Stack Developer',
-        'React Specialist', 
-        'Node.js Expert',
-        'Problem Solver',
-        'Code Enthusiast'
+        'AI/ML Enthusiast', 
+        'Python Developer',
+        'Data Science Student',
+        'Problem Solver'
     ];
     
     const roleElement = document.getElementById('role-text');
