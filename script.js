@@ -89,29 +89,132 @@ if (contactForm) {
     });
 }
 
-// Typing animation for hero title
-function typeWriter(element, text, speed = 100) {
-    let i = 0;
-    element.innerHTML = '';
+// Terminal typing animation
+function typeCommand(element, commands, speed = 100) {
+    let commandIndex = 0;
+    let charIndex = 0;
     
     function type() {
-        if (i < text.length) {
-            element.innerHTML += text.charAt(i);
-            i++;
-            setTimeout(type, speed);
+        if (commandIndex < commands.length) {
+            const currentCommand = commands[commandIndex];
+            
+            if (charIndex < currentCommand.length) {
+                element.textContent = currentCommand.substring(0, charIndex + 1);
+                charIndex++;
+                setTimeout(type, speed);
+            } else {
+                setTimeout(() => {
+                    commandIndex++;
+                    charIndex = 0;
+                    if (commandIndex < commands.length) {
+                        setTimeout(type, 1000);
+                    }
+                }, 2000);
+            }
+        } else {
+            // Restart the animation
+            setTimeout(() => {
+                commandIndex = 0;
+                charIndex = 0;
+                type();
+            }, 3000);
         }
     }
     
     type();
 }
 
-// Initialize typing animation when page loads
-window.addEventListener('load', () => {
-    const heroTitle = document.querySelector('.hero-title');
-    if (heroTitle) {
-        const originalText = heroTitle.innerHTML;
-        typeWriter(heroTitle, originalText, 50);
+// Role text animation
+function animateRoleText() {
+    const roles = [
+        'Full Stack Developer',
+        'React Specialist', 
+        'Node.js Expert',
+        'Problem Solver',
+        'Code Enthusiast'
+    ];
+    
+    const roleElement = document.getElementById('role-text');
+    let currentRole = 0;
+    
+    function changeRole() {
+        if (roleElement) {
+            roleElement.style.opacity = '0';
+            setTimeout(() => {
+                roleElement.textContent = roles[currentRole];
+                roleElement.style.opacity = '1';
+                currentRole = (currentRole + 1) % roles.length;
+            }, 300);
+        }
     }
+    
+    setInterval(changeRole, 3000);
+}
+
+// Counter animation for stats
+function animateCounters() {
+    const counters = document.querySelectorAll('.stat-number');
+    
+    counters.forEach(counter => {
+        const target = parseInt(counter.getAttribute('data-target'));
+        const increment = target / 100;
+        let current = 0;
+        
+        const updateCounter = () => {
+            if (current < target) {
+                current += increment;
+                counter.textContent = Math.ceil(current);
+                setTimeout(updateCounter, 20);
+            } else {
+                counter.textContent = target;
+            }
+        };
+        
+        updateCounter();
+    });
+}
+
+// Skill bars animation
+function animateSkillBars() {
+    const skillBars = document.querySelectorAll('.progress');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const width = entry.target.getAttribute('data-width');
+                entry.target.style.width = width + '%';
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    skillBars.forEach(bar => {
+        observer.observe(bar);
+    });
+}
+
+// Initialize all animations when page loads
+window.addEventListener('load', () => {
+    // Terminal typing animation
+    const typingElement = document.getElementById('typing-text');
+    if (typingElement) {
+        const commands = [
+            'whoami',
+            'cat skills.json',
+            'git log --oneline',
+            'npm run build',
+            'deploy --production'
+        ];
+        typeCommand(typingElement, commands, 80);
+    }
+    
+    // Role text animation
+    animateRoleText();
+    
+    // Counter animation with delay
+    setTimeout(animateCounters, 1000);
+    
+    // Skill bars animation
+    animateSkillBars();
 });
 
 // Add loading animation

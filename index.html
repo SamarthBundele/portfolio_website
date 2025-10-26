@@ -32,41 +32,138 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
+        <div class="matrix-bg"></div>
         <div class="hero-container">
             <div class="hero-content">
+                <div class="terminal-window">
+                    <div class="terminal-header">
+                        <div class="terminal-buttons">
+                            <span class="btn-close"></span>
+                            <span class="btn-minimize"></span>
+                            <span class="btn-maximize"></span>
+                        </div>
+                        <div class="terminal-title">samarth@developer:~$</div>
+                    </div>
+                    <div class="terminal-body">
+                        <div class="terminal-line">
+                            <span class="prompt">$</span>
+                            <span class="command" id="typing-text"></span>
+                            <span class="cursor">|</span>
+                        </div>
+                        <div class="terminal-output">
+                            <div class="output-line">Initializing developer profile...</div>
+                            <div class="output-line success">✓ Loading skills: [React, Node.js, Python, MongoDB]</div>
+                            <div class="output-line success">✓ Connecting to GitHub repositories...</div>
+                            <div class="output-line success">✓ Portfolio ready for deployment</div>
+                        </div>
+                    </div>
+                </div>
+                
                 <h1 class="hero-title">
-                    Hi, I'm <span class="gradient-text">Samarth Bundele</span>
+                    <span class="code-bracket">&lt;</span>
+                    <span class="gradient-text">Samarth Bundele</span>
+                    <span class="code-bracket">/&gt;</span>
                 </h1>
-                <p class="hero-subtitle">Full Stack Developer & Problem Solver</p>
-                <p class="hero-description">
-                    I create digital experiences that combine beautiful design with powerful functionality.
-                    Passionate about building scalable web applications and solving complex problems.
-                </p>
+                <div class="hero-subtitle">
+                    <span class="typing-container">
+                        <span class="role-text" id="role-text">Full Stack Developer</span>
+                        <span class="typing-cursor">_</span>
+                    </span>
+                </div>
+                
+                <div class="code-snippet">
+                    <pre><code class="language-javascript">
+<span class="keyword">const</span> <span class="variable">developer</span> = {
+  <span class="property">name</span>: <span class="string">"Samarth Bundele"</span>,
+  <span class="property">skills</span>: [<span class="string">"React"</span>, <span class="string">"Node.js"</span>, <span class="string">"Python"</span>],
+  <span class="property">passion</span>: <span class="string">"Building amazing web experiences"</span>,
+  <span class="property">available</span>: <span class="boolean">true</span>
+};
+                    </code></pre>
+                </div>
+
                 <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#projects" class="btn btn-primary">
+                        <i class="fas fa-code"></i> View Projects
+                    </a>
                     <a href="assets/resume.pdf" target="_blank" class="btn btn-secondary">
-                        <i class="fas fa-download"></i> Resume
+                        <i class="fas fa-file-code"></i> Download CV
+                    </a>
+                    <a href="https://github.com/SamarthBundele" target="_blank" class="btn btn-github">
+                        <i class="fab fa-github"></i> GitHub
                     </a>
                 </div>
-                <div class="social-links">
-                    <a href="https://github.com/SamarthBundele" target="_blank" class="social-link">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://linkedin.com/in/samarthbundele" target="_blank" class="social-link">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="https://twitter.com/samarthbundele" target="_blank" class="social-link">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="mailto:samarth@example.com" class="social-link">
-                        <i class="fas fa-envelope"></i>
-                    </a>
+
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="50">0</div>
+                        <div class="stat-label">Projects</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="1000">0</div>
+                        <div class="stat-label">Commits</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="15">0</div>
+                        <div class="stat-label">Technologies</div>
+                    </div>
                 </div>
             </div>
-            <div class="hero-image">
-                <div class="profile-card">
-                    <div class="profile-img">
-                        <i class="fas fa-user"></i>
+            
+            <div class="hero-code">
+                <div class="code-editor">
+                    <div class="editor-header">
+                        <div class="editor-tabs">
+                            <div class="tab active">
+                                <i class="fab fa-js-square"></i>
+                                <span>portfolio.js</span>
+                            </div>
+                            <div class="tab">
+                                <i class="fab fa-react"></i>
+                                <span>App.jsx</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="editor-body">
+                        <div class="line-numbers">
+                            <span>1</span>
+                            <span>2</span>
+                            <span>3</span>
+                            <span>4</span>
+                            <span>5</span>
+                            <span>6</span>
+                            <span>7</span>
+                            <span>8</span>
+                            <span>9</span>
+                            <span>10</span>
+                        </div>
+                        <div class="code-content">
+                            <div class="code-line"><span class="keyword">import</span> { <span class="variable">skills</span>, <span class="variable">projects</span> } <span class="keyword">from</span> <span class="string">'./developer'</span>;</div>
+                            <div class="code-line"></div>
+                            <div class="code-line"><span class="keyword">function</span> <span class="function">Portfolio</span>() {</div>
+                            <div class="code-line">  <span class="keyword">return</span> (</div>
+                            <div class="code-line">    &lt;<span class="tag">div</span> <span class="attribute">className</span>=<span class="string">"portfolio"</span>&gt;</div>
+                            <div class="code-line">      &lt;<span class="tag">Hero</span> <span class="attribute">developer</span>={<span class="variable">samarth</span>} /&gt;</div>
+                            <div class="code-line">      &lt;<span class="tag">Projects</span> <span class="attribute">data</span>={<span class="variable">projects</span>} /&gt;</div>
+                            <div class="code-line">    &lt;/<span class="tag">div</span>&gt;</div>
+                            <div class="code-line">  );</div>
+                            <div class="code-line">}</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="floating-elements">
+                    <div class="floating-icon" style="--delay: 0s">
+                        <i class="fab fa-react"></i>
+                    </div>
+                    <div class="floating-icon" style="--delay: 1s">
+                        <i class="fab fa-node-js"></i>
+                    </div>
+                    <div class="floating-icon" style="--delay: 2s">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <div class="floating-icon" style="--delay: 3s">
+                        <i class="fas fa-database"></i>
                     </div>
                 </div>
             </div>
@@ -108,39 +205,195 @@
     <!-- Skills Section -->
     <section id="skills" class="skills">
         <div class="container">
-            <h2 class="section-title">Skills & Technologies</h2>
+            <h2 class="section-title">
+                <span class="code-comment">// My Technical Arsenal</span>
+            </h2>
+            
+            <div class="skills-terminal">
+                <div class="terminal-header">
+                    <div class="terminal-buttons">
+                        <span class="btn-close"></span>
+                        <span class="btn-minimize"></span>
+                        <span class="btn-maximize"></span>
+                    </div>
+                    <div class="terminal-title">skills.sh</div>
+                </div>
+                <div class="terminal-content">
+                    <div class="command-line">
+                        <span class="prompt">samarth@dev:~$</span>
+                        <span class="command">cat skills.json</span>
+                    </div>
+                </div>
+            </div>
+
             <div class="skills-grid">
                 <div class="skill-category">
-                    <h3>Frontend</h3>
-                    <div class="skill-items">
-                        <span class="skill-item">HTML5</span>
-                        <span class="skill-item">CSS3</span>
-                        <span class="skill-item">JavaScript</span>
-                        <span class="skill-item">React</span>
-                        <span class="skill-item">Vue.js</span>
-                        <span class="skill-item">TypeScript</span>
+                    <div class="category-header">
+                        <i class="fas fa-laptop-code"></i>
+                        <h3>Frontend Development</h3>
+                    </div>
+                    <div class="skill-bars">
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span class="skill-name">React.js</span>
+                                <span class="skill-percentage">95%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" data-width="95"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span class="skill-name">JavaScript/TypeScript</span>
+                                <span class="skill-percentage">90%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" data-width="90"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span class="skill-name">Next.js</span>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" data-width="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span class="skill-name">CSS3/Tailwind</span>
+                                <span class="skill-percentage">88%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" data-width="88"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
                 <div class="skill-category">
-                    <h3>Backend</h3>
-                    <div class="skill-items">
-                        <span class="skill-item">Node.js</span>
-                        <span class="skill-item">Python</span>
-                        <span class="skill-item">Express.js</span>
-                        <span class="skill-item">Django</span>
-                        <span class="skill-item">MongoDB</span>
-                        <span class="skill-item">PostgreSQL</span>
+                    <div class="category-header">
+                        <i class="fas fa-server"></i>
+                        <h3>Backend Development</h3>
+                    </div>
+                    <div class="skill-bars">
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span class="skill-name">Node.js</span>
+                                <span class="skill-percentage">92%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" data-width="92"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span class="skill-name">Python</span>
+                                <span class="skill-percentage">87%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" data-width="87"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span class="skill-name">MongoDB</span>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" data-width="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span class="skill-name">PostgreSQL</span>
+                                <span class="skill-percentage">80%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" data-width="80"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
                 <div class="skill-category">
-                    <h3>Tools & Others</h3>
-                    <div class="skill-items">
-                        <span class="skill-item">Git</span>
-                        <span class="skill-item">Docker</span>
-                        <span class="skill-item">AWS</span>
-                        <span class="skill-item">Vercel</span>
-                        <span class="skill-item">Figma</span>
-                        <span class="skill-item">VS Code</span>
+                    <div class="category-header">
+                        <i class="fas fa-tools"></i>
+                        <h3>DevOps & Tools</h3>
+                    </div>
+                    <div class="skill-bars">
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span class="skill-name">Git/GitHub</span>
+                                <span class="skill-percentage">95%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" data-width="95"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span class="skill-name">Docker</span>
+                                <span class="skill-percentage">75%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" data-width="75"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span class="skill-name">AWS</span>
+                                <span class="skill-percentage">70%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" data-width="70"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span class="skill-name">CI/CD</span>
+                                <span class="skill-percentage">78%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" data-width="78"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="github-stats">
+                <h3>GitHub Activity</h3>
+                <div class="stats-container">
+                    <div class="github-card">
+                        <div class="card-header">
+                            <i class="fab fa-github"></i>
+                            <span>Contribution Graph</span>
+                        </div>
+                        <div class="contribution-graph">
+                            <!-- This would be populated by GitHub API -->
+                            <div class="graph-placeholder">
+                                <div class="graph-row">
+                                    <div class="day active"></div>
+                                    <div class="day"></div>
+                                    <div class="day active"></div>
+                                    <div class="day active"></div>
+                                    <div class="day"></div>
+                                    <div class="day active"></div>
+                                    <div class="day active"></div>
+                                </div>
+                                <div class="graph-row">
+                                    <div class="day active"></div>
+                                    <div class="day active"></div>
+                                    <div class="day"></div>
+                                    <div class="day active"></div>
+                                    <div class="day active"></div>
+                                    <div class="day"></div>
+                                    <div class="day active"></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
